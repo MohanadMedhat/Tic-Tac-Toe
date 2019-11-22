@@ -116,7 +116,9 @@ def check_condition():
 #restarts the game
 def play_again():
   play_again = input("Do you want to play again? (Y/N)")
-  return play_again
+
+  if play_again == 'Y' or play_again == 'N':
+   return play_again
 
 
 #main start game function
@@ -129,11 +131,7 @@ def start_game():
     if check_condition() == True:
       break
 
-  if play_again() == 'Y':
-
-    display_board(theboard)
-
-    start_game()
+  
     
 
 
@@ -146,3 +144,19 @@ def start_game():
 display_board(theboard)
 
 start_game()
+
+if play_again() == 'Y':
+ 
+ theboard = ['-', '-', '-',
+            '-', '-', '-',
+            '-', '-', '-']
+
+ played = []
+ position = ''
+
+#---X starts
+ Current_player = 'X'
+ display_board(theboard)
+
+
+ start_game()
